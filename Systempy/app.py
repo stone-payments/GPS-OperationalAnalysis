@@ -35,7 +35,7 @@ def fails_statistics():
 
     reports.main()
 
-    #reports.frontfees()
+    reports.frontfees()
 
     return index()
 
