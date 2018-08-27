@@ -71,11 +71,11 @@ def full(daterange, deltadi):
     outputpath = '../Files/Queries/'
     split_url = 'https://banking-report-gps.stone.com.br:3443/report.csv'
     split_filepath = outputpath + 'report.csv'
-    #file_download(split_url,split_filepath)
+    file_download(split_url,split_filepath)
 
     sales_url = 'https://banking-report-gps.stone.com.br:3443/all-sales-report'
     sales_filepath = outputpath + 'allsales.csv'
-    #file_download(sales_url,sales_filepath)
+    file_download(sales_url,sales_filepath)
 
     stroutput = split_analysis(daterange, deltadi, deltadf)
 

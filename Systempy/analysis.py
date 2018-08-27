@@ -550,8 +550,30 @@ def split_analysis(daterange, deltadi, deltadf):
         reprocess.to_csv(repreportname,index=False, sep=';')
     except:
         print(' * No transactions to reprocess.')
-    
-    
+
+
+    #Get information about lost transactions (Diff between all fails and non liquidated)
+    try:
+        fails_lostr = aggdfs(fails_report_ok, 9, 'Liquidou')
+        fail_lostr_d = aggdfs(fails_lostr, 7, 'Credito')['Valor Bruto da Transacao']
+        fail_lostr_dsum = fail_lostr_d.sum()
+        fail_lostr_dnum = fail_lostr_d.shape[0]
+    except:
+        print('None of the Debit fails has been liquidated yet.')
+        fail_lostr_dsum = 0
+        fail_lostr_dnum = 0
+
+    try:
+        fails_lostr = aggdfs(fails_report_ok, 9, 'Liquidou')
+        fail_lostr_c = aggdfs(fails_lostr, 7, 'Debito')['Valor Bruto da Transacao']
+        fail_lostr_csum = fail_lostr_c.sum()
+        fail_lostr_cnum = fail_lostr_c.shape[0]
+    except:
+        print('None of the Credit fails has been liquidated yet.')
+        fail_lostr_csum = 0
+        fail_lostr_cnum = 0
+
+
     #Add stoneids to dictionaries
     kpi_dict[dict_ind]['ID_Fail_List'] = {}
     kpi_dict[dict_ind]['ID_Fail_List']['All'] = {}
@@ -593,16 +615,16 @@ def split_analysis(daterange, deltadi, deltadf):
     kpi_dict[dict_ind]['Fail_Statistics']['Total']['Percentage_of_transactions'] = str(round(((fcnum + fdnum) / (adnum + acnum) * 100),2)) + '%'
 
     kpi_dict[dict_ind]['Fail_Statistics_Lost']['Credit'] = {}
-    kpi_dict[dict_ind]['Fail_Statistics_Lost']['Credit']['Percentage_of_value'] = 0 # value of lost credit / all credit
-    kpi_dict[dict_ind]['Fail_Statistics_Lost']['Credit']['Percentage_of_transactions'] = 0 # number of credit / all credit
+    kpi_dict[dict_ind]['Fail_Statistics_Lost']['Credit']['Percentage_of_value'] = str(round((float(fail_lostr_csum)/float(acsum)*100), 2)) + '%'
+    kpi_dict[dict_ind]['Fail_Statistics_Lost']['Credit']['Percentage_of_transactions'] = str(round((float(fail_lostr_cnum)/float(acnum)*100), 2)) + '%'
 
     kpi_dict[dict_ind]['Fail_Statistics_Lost']['Debit'] = {}
-    kpi_dict[dict_ind]['Fail_Statistics_Lost']['Debit']['Percentage_of_value'] = 0 # value of lost credit / all credit
-    kpi_dict[dict_ind]['Fail_Statistics_Lost']['Debit']['Percentage_of_transactions'] = 0 # number of credit / all credit
+    kpi_dict[dict_ind]['Fail_Statistics_Lost']['Debit']['Percentage_of_value'] = str(round((float(fail_lostr_dsum)/float(adsum)*100), 2)) + '%'
+    kpi_dict[dict_ind]['Fail_Statistics_Lost']['Debit']['Percentage_of_transactions'] = str(round((float(fail_lostr_dnum)/float(adnum)*100), 2)) + '%'
 
     kpi_dict[dict_ind]['Fail_Statistics_Lost']['Total'] = {}
-    kpi_dict[dict_ind]['Fail_Statistics_Lost']['Total']['Percentage_of_value'] = 0 # total lost in value/ total 
-    kpi_dict[dict_ind]['Fail_Statistics_Lost']['Total']['Percentage_of_transactions'] = 0 # total lost in number / total
+    kpi_dict[dict_ind]['Fail_Statistics_Lost']['Total']['Percentage_of_value'] = str(round((float(fail_lostr_csum)/float(acsum)*100), 2)) + '%'
+    kpi_dict[dict_ind]['Fail_Statistics_Lost']['Total']['Percentage_of_transactions'] = str(round((float(fail_lostr_dnum+fail_lostr_cnum)/float(acnum+adnum)*100), 2)) + '%'
 
     #Compare Fail Statistics with lost transactions to reprocess those ain't paid
 

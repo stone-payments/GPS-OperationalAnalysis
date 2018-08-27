@@ -35,7 +35,7 @@ def fails_statistics():
 
     reports.main()
 
-    reports.frontfees()
+    #reports.frontfees()
 
     return index()
 
@@ -125,22 +125,6 @@ def feesreport():
     filename = 'input-cobranca-split.csv'
 
     return send_file(filepath,attachment_filename=filename, as_attachment=True)
-
-'''
-@app.route('/e-mail-send/')
-def mailfunc():
-
-    #recipients = 'lucas.rocha@stone.com.br'
-    #body = 'Teste message body'
-    #path = '..Files/all_trx.xlsx'
-    #Attach file to e-mail
-
-    pythoncom.CoInitialize()
-    reports.email()
-
-    return 'OK again'
-'''
-
 
 
 
