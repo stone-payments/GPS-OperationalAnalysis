@@ -1,0 +1,16 @@
+# pip install --upgrade pip
+# pip install xlrd 1.1.0
+# pip install requests 2.18.4
+# pip install urllib3 1.22
+# pip install openpyxl 2.5.3
+# pip install xlsxwriter 1.0.5
+# pip install auxlib
+# pip install django 2.0.5
+# pip install ez_setup
+# pip install pycosat 0.6.1
+# pip install ruamel.yaml 0.15.37
+# pip install soundfile 0.10.2
+# pip install pipenv
+# pip install virtualenv
+# pip install certifi 2018.4.16
+# pip install pywin32

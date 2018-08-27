@@ -1,0 +1,49 @@
+# C extensions
+*.so
+
+# Docker
+docker-compose.*.yaml
+
+# Flask
+instance/
+.webassets-cache
+
+# Log
+log/
+logs/
+
+# Other
+run_local.py
+
+# PyCharm
+.idea/
+
+# Python Compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Sphinx documentation
+docs/_build/
+
+# Unit Test
+.pytest_cache/
+.hypothesis/
+
+# Virtual Environment
+.env
+.venv
+env/
+venv/
+
+# Visual Studio
+.vs/
+
+# VsCode
+.vscode/
+
+# Sensitive Data
+.sensitive.py
+sensitive.py
+**/.sensitive.py
+*.sensitive.py

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+<body class="body">
+    <div class="container" align="left">
+
+        <h1 style="color: #5e9ca0;"><span style="color: #339966;">Split Analysis Finished!</span></h1>
+        <h2 style="color: #2e6c80;"><span style="color: #000000;">Get the reports from the folders below:&nbsp;</span></h2>
+        <ul>
+            <li><b>All transactions</b> at path : 'Your-Project-Folder/Files/Reports/Day/All/All_trx.xlsx'</li>
+            <p></p>
+            <li><b>All fails</b> at path:&nbsp;'Your-Project-Folder/Files/Reports/Day/Fails/fails_report.xlsx'</li>
+            <p></p>
+            <li><b>Non-Splitabble</b> (VAN) at path:&nbsp;'Your-Project-Folder/Files/Reports/Day/Fails/Van_trx.xlsx'</li>
+            <p></p>
+            <li><b>JSON Result</b> at path:&nbsp;'Your-Project-Folder/Files/Reports/Day/Result/Analysis_result.txt'</li>
+            <p></p>
+            <li><b>Fees Report</b> at path:&nbsp;&nbsp;'Your-Project-Folder/Files/Reports/Fees/input-cobranca-split.csv'</li>
+        </ul>
+        <p>&nbsp;</p>
+        <p>&nbsp;&nbsp;&nbsp;>>>>>>>>>>>>&nbsp;&nbsp;&nbsp;&nbsp;Or use the buttons below (Beta):</p>
+        &nbsp;&nbsp;&nbsp;<a href="/all-trx-report/" target="blank"><button class='btn btn-default'>Download All Transactions</button></a>
+        &nbsp;&nbsp;&nbsp;<a href="/reprocess-report/" target="blank"><button class='btn btn-default'>Download Reprocessing Report</button></a>
+        &nbsp;&nbsp;&nbsp;<a href="/fails-report/" target="blank"><button class='btn btn-default'>Download Fails Report</button></a>
+        &nbsp;&nbsp;&nbsp;<a href="/van-trx-report/" target="blank"><button class='btn btn-default'>Download Van Transactions</button></a>
+        <p>&nbsp;</p>
+        &nbsp;&nbsp;&nbsp;<a href="/response-json/" target="blank"><button class='btn btn-default'>Download JSON response</button></a>
+        &nbsp;&nbsp;&nbsp;<a href="/fees-report/" target="blank"><button class='btn btn-default'>Download Fees Report</button></a>
+    </div>
+</body>
+{% endblock %}
