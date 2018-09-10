@@ -105,13 +105,13 @@ def dffilter(filepath, Datecol, dateformat, duplicates, output, daterange, delta
 
         first_date = str(first_date.strftime(dateformat))
 
-        last_date = datetime.date.today() - datetime.timedelta(deltadi)
+        last_date = datetime.date.today() + datetime.timedelta(1)
 
         last_date = str(last_date.strftime(dateformat))
 
         #print(first_date, last_date)
 
-        df_sales_ok = df_sales[(df_sales[str(Datecol)] > first_date) & (df_sales[str(Datecol)] < last_date)]
+        df_sales_ok = df_sales[(df_sales[str(Datecol)] > first_date) & (df_sales[str(Datecol)] <= last_date)]
 
 
     # ----------------------------------------------- Format input data to be used in analysis ----------------------------------- #

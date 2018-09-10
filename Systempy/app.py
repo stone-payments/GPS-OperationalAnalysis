@@ -43,7 +43,9 @@ def fails_statistics():
 @app.route('/fails-statistics-full/')
 def fails_statistics_full():
 
-    daterange = int(input(' * A) Number of days before today to START analysis : '))
+    daterange = 1
+
+    #int(input(' * A) Number of days before today to START analysis : '))
 
     deltadi = int(input(' * B) Number of days before today to END analysis (min. 1 and bigger than START): '))
 

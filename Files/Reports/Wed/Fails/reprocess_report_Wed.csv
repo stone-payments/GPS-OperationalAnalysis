@@ -1,0 +1,4 @@
+Data da Venda;Nome Fantasia do Fornecedor;StoneID;Total de parcelas;Bandeira;Valor Bruto da Transacao;Taxa de contrato;Tipo;StoneCode EC;Liquidou?;Hora da Venda
+2018-09-05;Codigo Girls;34881961468975.0;1.0;Maestro                                                     ;49.0;0.5;Debito;196930420.0;N Liquidou;17:42:44.000000
+2018-09-05;Gordon Brothers;34881961229629.0;3.0;Hiper / HiperCard Crédito                                   ;178.0;1.0;Credito;104241336.0;N Liquidou;17:07:18.000000
+2018-09-05;Gordon Brothers;34881961239508.0;5.0;Hiper / HiperCard Crédito                                   ;766.15;1.0;Credito;376408596.0;N Liquidou;17:08:48.000000

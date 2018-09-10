@@ -3,7 +3,11 @@
 This project follows [semantic versioning][1] and [keep a changelog][2]
 practices on this changelog file.
 
-## [0.3.1] - 2018-28-27
+## [1.0.0] - 2018-09-10
+### New Version
+- D+0 Fail Analysis.
+
+## [0.3.1] - 2018-08-27
 ### Added
 - Added existing project files.
 
